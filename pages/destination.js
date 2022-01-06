@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import { data } from "../public/lib/data"
 
-function destination() {
+function Destination() {
 
     const [place, setPlace] = useState("Moon");
 
@@ -79,4 +79,4 @@ function destination() {
     )
 }
 
-export default destination
+export default Destination

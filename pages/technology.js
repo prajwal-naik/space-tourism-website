@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header"
 import { data } from "../public/lib/data"
 
-function technology() {
+function Technology() {
 
 
     const [index, setIndex] = useState(0);
@@ -73,4 +73,4 @@ function technology() {
     )
 }
 
-export default technology
+export default Technology

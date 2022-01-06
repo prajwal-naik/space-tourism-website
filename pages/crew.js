@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import { data } from "../public/lib/data"
 
-function crew() {
+function Crew() {
 
 
     const [crewMemberName, setCrewMemberName] = useState("Douglas Hurley")
@@ -70,4 +70,4 @@ function crew() {
     )
 }
 
-export default crew
+export default Crew
