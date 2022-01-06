@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { useEffect, useState } from "react"
+import { useSwipeable } from "react-swipeable"
 import Header from "../components/Header"
 import { data } from "../public/lib/data"
 
@@ -13,6 +14,18 @@ function Crew() {
     // console.log(data)
     // console.log(crewMember?.name?.split(" ")?.toLowerCase())
 
+    const index = 0;
+    const nameArray = ["Douglas Hurley", "Mark Shuttleworth", "Victor Glover", "Anousheh Ansari"]
+    const handlers = useSwipeable({
+        onSwipedLeft:(e) => {
+            console.log("Swiped");
+            if(index<4)
+                index+=1;
+            console.log(index);
+            setCrewMemberName(nameArray[index])
+        },
+        
+    })
 
     useEffect(() => {
         setCrewMember(data.crew.filter(a => a.name === crewMemberName)[0])
@@ -36,7 +49,7 @@ function Crew() {
                     <p className='barlow-condensed text-[20px] xl:text-[28px] text-[#d0d6f9] tracking-widest'><span className="text-[#52555c]">02&nbsp;&nbsp;</span> MEET YOUR CREW</p>
                     <div className="flex flex-col gap-[40px] xl:hidden">
                         <div className=" border-b-[1px] border-[#52555c]"><img src = {`${"/assets/crew/image-"+crewMemberName.toLowerCase().split(" ").join("-")+".png"}`} className="w-[60%] m-auto" alt="" /></div>
-                        <div className="flex items-center justify-center xl:hidden gap-[35px]">
+                        <div className="flex items-center justify-center xl:hidden gap-[35px]" {...handlers}>
                         {
                             data.crew.map((member) => (
                                 <div key = {member.name} className={`${crewMemberName===member.name?"bg-white":null} h-[10px] w-[10px] rounded-full bg-[#ffffff59] hover:bg-white`} onClick={() => {setCrewMemberName(member.name)}}></div>
