@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Header from '../components/Header'
 import { currentPageState } from '../recoil';
@@ -56,11 +57,13 @@ export default function Home() {
 							because we’ll give you a truly out of this world experience!
 						</p>
 					</div>
-					<div className='xl:border-[80px] xl:border-transparent xl:hover:border-[#ffffff2f] rounded-full transition-all duration-500 cursor-pointer'>
-						<p className=' px-[50px] py-[92px] bg-white rounded-full bellefair text-[30px] text-[#0B0D17] shadow-6xl'>
-							EXPLORE
-						</p>
-					</div>
+					<Link href="/destination">
+						<div className='xl:border-[80px] xl:border-transparent xl:hover:border-[#ffffff2f] rounded-full transition-all duration-500 cursor-pointer'>
+							<p className=' px-[50px] py-[92px] bg-white rounded-full bellefair text-[30px] text-[#0B0D17] shadow-6xl'>
+								EXPLORE
+							</p>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</div>
