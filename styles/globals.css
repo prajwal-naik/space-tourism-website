@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    color: white;
+}
+
+
+
+/* .bg-home{
+    background-image: url("/public/assets/home/background-home-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.header-menu-item{
+    padding-block: 30px;
+    padding-bottom:26px;
+    border-bottom: 4px solid transparent;
+    transition: all;
+    transition-duration: 300ms;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+.header-menu-item-destination{
+    padding-block: 10px;
+    padding-bottom:6px;
+    border-bottom: 2px solid transparent;
+    transition: all;
+    transition-duration: 300ms;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+}
+
+.header-menu-item-destination-selected {
+    border-bottom:2px solid white
+}
+
+.header-menu-item-destination:hover{
+    padding-block: 10px;
+
+    padding-bottom:6px;
+
+    border-bottom:2px solid rgba(255, 255, 255, 0.5)
+}
+
+.header-menu-item-selected {
+    border-bottom: 4px solid white;
+}
+
+.header-menu-item:hover{
+    padding-block: 30px;
+
+    padding-bottom:26px;
+
+    border-bottom:4px solid rgba(255, 255, 255, 0.5)
+}
+
+.barlow-condensed {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.bellefair {
+    font-family: 'Bellefair', serif;
+}
+
+.spaceport{
+    background-image: url('/assets/technology/image-spaceport-portrait.jpg');
+}
+
+.launch{
+    background-image: url('/assets/technology/image-launch-vehicle-portrait.jpg');
+}
+
+.space{
+    background-image: url('/assets/technology/image-space-capsule-portrait.jpg');
+}
+
+.douglas{
+    background-image: url('/assets/crew/image-douglas-hurley.png');
+}
+
+.mark{
+    background-image: url('/assets/crew/image-mark-shuttleworth.png');
+}
+
+.victor{
+    background-image: url('/assets/crew/image-victor-glover.png');
+}
+
+.anousheh{
+    background-image: url('/assets/crew/image-anousheh-ansari.png');
+}
