@@ -47,9 +47,9 @@ function Crew() {
                 
                 <div className="w-full xl:max-w-[90%] flex flex-col justify-center items-center xl:items-start xl:justify-between px-[20px] xl:px-0 pb-[100px] gap-[40px] xl:gap-[0]">
                     <p className='barlow-condensed text-[20px] xl:text-[28px] text-[#d0d6f9] tracking-widest'><span className="text-[#52555c]">02&nbsp;&nbsp;</span> MEET YOUR CREW</p>
-                    <div className="flex flex-col gap-[40px] xl:hidden">
+                    <div className="flex flex-col gap-[40px] xl:hidden"  {...handlers}>
                         <div className=" border-b-[1px] border-[#52555c]"><img src = {`${"/assets/crew/image-"+crewMemberName.toLowerCase().split(" ").join("-")+".png"}`} className="w-[60%] m-auto" alt="" /></div>
-                        <div className="flex items-center justify-center xl:hidden gap-[35px]" {...handlers}>
+                        <div className="flex items-center justify-center xl:hidden gap-[35px]">
                         {
                             data.crew.map((member) => (
                                 <div key = {member.name} className={`${crewMemberName===member.name?"bg-white":null} h-[10px] w-[10px] rounded-full bg-[#ffffff59] hover:bg-white`} onClick={() => {setCrewMemberName(member.name)}}></div>
