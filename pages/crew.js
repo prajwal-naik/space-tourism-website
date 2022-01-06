@@ -8,24 +8,27 @@ function Crew() {
 
 
     const [crewMemberName, setCrewMemberName] = useState("Douglas Hurley")
-    console.log(`bg-${crewMemberName.split(" ")[0].toLowerCase()}`)
+    // console.log(`bg-${crewMemberName.split(" ")[0].toLowerCase()}`)
     // const [crewMember, setCrewMember] = useState(data.crew[0])
     const [crewMember, setCrewMember] = useState(data.crew.filter(a => a.name === crewMemberName)[0])
     // console.log(data)
     // console.log(crewMember?.name?.split(" ")?.toLowerCase())
 
-    const index = 0;
+    const [index, setIndex] = useState(0);
     const nameArray = ["Douglas Hurley", "Mark Shuttleworth", "Victor Glover", "Anousheh Ansari"]
-    const handlers = useSwipeable({
-        onSwipedLeft:(e) => {
-            console.log("Swiped");
-            if(index<4)
-                index+=1;
-            console.log(index);
-            setCrewMemberName(nameArray[index])
-        },
+    // const handlers = useSwipeable({
+    //     onSwipedLeft:(e) => {
+    //         console.log("Swiped");
+    //         setIndex((index + 1) % 4, )
+    //         console.log(index);
+            
+    //     },
         
-    })
+    // })
+
+    // useEffect(() => {
+    //     setCrewMemberName(nameArray[index])
+    // }, [index])
 
     useEffect(() => {
         setCrewMember(data.crew.filter(a => a.name === crewMemberName)[0])
@@ -47,7 +50,7 @@ function Crew() {
                 
                 <div className="w-full xl:max-w-[90%] flex flex-col justify-center items-center xl:items-start xl:justify-between px-[20px] xl:px-0 pb-[100px] gap-[40px] xl:gap-[0]">
                     <p className='barlow-condensed text-[20px] xl:text-[28px] text-[#d0d6f9] tracking-widest'><span className="text-[#52555c]">02&nbsp;&nbsp;</span> MEET YOUR CREW</p>
-                    <div className="flex flex-col gap-[40px] xl:hidden"  {...handlers}>
+                    <div className="flex flex-col gap-[40px] xl:hidden">
                         <div className=" border-b-[1px] border-[#52555c]"><img src = {`${"/assets/crew/image-"+crewMemberName.toLowerCase().split(" ").join("-")+".png"}`} className="w-[60%] m-auto" alt="" /></div>
                         <div className="flex items-center justify-center xl:hidden gap-[35px]">
                         {
